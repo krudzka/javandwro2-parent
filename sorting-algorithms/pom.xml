@@ -10,7 +10,4 @@
 
     <artifactId>sorting-algorithms</artifactId>
     <packaging>jar</packaging>
-
-    <name>sorting-algorithms</name>
-
 </project>

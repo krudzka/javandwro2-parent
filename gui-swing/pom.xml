@@ -10,7 +10,4 @@
 
     <artifactId>gui-swing</artifactId>
     <packaging>jar</packaging>
-
-    <name>algorithms</name>
-
 </project>
