@@ -8,9 +8,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>sorting-algorithms</artifactId>
+    <artifactId>gui-swing</artifactId>
     <packaging>jar</packaging>
 
-    <name>sorting-algorithms</name>
+    <name>algorithms</name>
 
 </project>
