@@ -10,6 +10,12 @@ import java.awt.event.MouseListener;
  * Created by jakubwrabel on 02.03.2017.
  */
 public class CurrencyCalculator extends JFrame {
+	JTextField textFieldPLN;
+	JTextField textFieldEUR;
+	JButton jButton;
+	JComboBox comboBox;
+	JLabel labelEUR;
+
 	public static void main(String[] args) {
 		new CurrencyCalculator();
 	}
@@ -26,46 +32,42 @@ public class CurrencyCalculator extends JFrame {
 		labelPLN.setLocation(0, 0);
 		add(labelPLN);
 
-		JTextField textFieldPLN = new JTextField();
+		textFieldPLN = new JTextField();
 		textFieldPLN.setSize(200, 50);
 		textFieldPLN.setLocation(0, 50);
 		add(textFieldPLN);
 
 
-		JLabel labelEUR = new JLabel("Podaj kwotę w EUR");
+		labelEUR = new JLabel("Podaj kwotę w EUR");
 		labelEUR.setSize(200, 50);
 		labelEUR.setLocation(0, 120);
 		add(labelEUR);
 
-		JTextField textFieldEUR = new JTextField();
+		textFieldEUR = new JTextField();
 		textFieldEUR.setSize(200, 50);
 		textFieldEUR.setLocation(0, 190);
 		add(textFieldEUR);
 
 
-		JButton jButton = new JButton("Przelicz");
+		jButton = new JButton("Przelicz");
 		jButton.setSize(100, 50);
 		jButton.setLocation(200, 100);
 		add(jButton);
 
+		String[] comboBoxContent = new String[]{"USD", "EUR", "CHF"};
+		comboBox = new JComboBox<>(comboBoxContent);
+		comboBox.setSize(200, 50);
+		comboBox.setLocation(200, 0);
+		add(comboBox);
+
+		setListeners();
+	}
+
+	private void setListeners() {
 		jButton.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				String amountPLN = textFieldPLN.getText();
-				try {
-					amountPLN = amountPLN.replace(",", ".");
-					double amountPLNDouble = Double.parseDouble(amountPLN);
-					double amountEUR = amountPLNDouble / 4.4d;
-					textFieldEUR.setText("" + amountEUR);
-
-				} catch (NumberFormatException e1) {
-					textFieldEUR.setText("Niepoprawna liczba");
-
-					JOptionPane.showMessageDialog(getParent(), "Wrong number", "ERROR", JOptionPane.ERROR_MESSAGE);
-				}
-
-//				String.valueOf(amountEUR);
-//				textFieldEUR.setText(Double.toString(amountEUR));
+				convertCurrency();
 			}
 
 			@Override
@@ -88,6 +90,42 @@ public class CurrencyCalculator extends JFrame {
 
 			}
 		});
+	}
 
+	private void convertCurrency() {
+		String amountPLN = textFieldPLN.getText();
+		try {
+			amountPLN = amountPLN.replace(",", ".");
+			double amountPLNDouble = Double.parseDouble(amountPLN);
+
+			String selectedItem = (String) comboBox.getSelectedItem();
+
+			labelEUR.setText("Kwota w " + selectedItem);
+			double result = convert(amountPLNDouble, selectedItem);
+			textFieldEUR.setText("" + result);
+		} catch (NumberFormatException e1) {
+			textFieldEUR.setText("Niepoprawna liczba");
+
+			JOptionPane.showMessageDialog(getParent(), "Wrong number", "ERROR", JOptionPane.ERROR_MESSAGE);
+		}
+
+//				String.valueOf(amountEUR);
+//				textFieldEUR.setText(Double.toString(amountEUR));
+	}
+
+	private double convert(double amountPLNDouble, String selectedItem) {
+		double result;
+
+		switch (selectedItem) {
+			case "USD":
+				result = amountPLNDouble / 4.0d;
+				break;
+			case "EUR":
+				result = amountPLNDouble / 4.4d;
+				break;
+			default:
+				result = amountPLNDouble / 4.2d;
+		}
+		return result;
 	}
 }
