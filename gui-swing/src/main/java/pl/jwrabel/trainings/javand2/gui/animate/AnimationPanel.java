@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
  */
 public class AnimationPanel extends JPanel {
 	private int y = 0;
+	private boolean shouldGoDown = true;
 
 	@Override
 	protected void paintComponent(Graphics g) {
@@ -24,11 +25,20 @@ public class AnimationPanel extends JPanel {
 		timer.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				y++;
+				if (shouldGoDown) {
+					y += 3;
+				} else {
+					y -= 3;
+				}
+
 				repaint();
 
-				if (y >= getHeight() - 30) {
-					timer.stop();
+				if (y == getHeight() - 30) {
+					shouldGoDown = false;
+				}
+
+				if (y == 0) {
+					shouldGoDown = true;
 				}
 			}
 		});
