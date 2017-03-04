@@ -1,11 +1,13 @@
 package pl.jwrabel.trainings.algorithms;
 
 import pl.jwrabel.trainings.algorithms.sorting.BubbleSort;
+import pl.jwrabel.trainings.algorithms.sorting.InsertionSort;
+import pl.jwrabel.trainings.algorithms.sorting.QuickSort;
 import pl.jwrabel.trainings.algorithms.sorting.SortingAlgorithm;
 
 public class App {
 	public static void main(String[] args) {
-		SortingAlgorithm sortingAlgorithm = new BubbleSort();
+		SortingAlgorithm sortingAlgorithm = new InsertionSort();
 
 		int data[] = {10, 5, 3, 1, 20, 4};
 		printArray("Data before", data);

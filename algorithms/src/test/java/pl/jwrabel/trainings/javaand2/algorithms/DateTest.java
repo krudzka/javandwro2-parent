@@ -34,4 +34,29 @@ public class DateTest {
 		// when
 		new Date(day, month, year);
 	}
+
+	@Test
+	public void setMonth_correctData() {
+		// given
+		int month = 10;
+		Date date = new Date(1, 1, 1);
+
+		// when
+		date.setMonth(month);
+
+		// then
+		assertEquals(month, date.getMonth());
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void setMonth_shouldThrowExceptionForNegativeMonth() {
+		// given
+		int month = -5;
+		Date date = new Date(1, 1, 1);
+
+		// when
+		date.setMonth(month);
+	}
+
+
 }
