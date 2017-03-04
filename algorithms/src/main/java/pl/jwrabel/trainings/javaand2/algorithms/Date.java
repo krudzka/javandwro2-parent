@@ -8,6 +8,7 @@ public class Date {
 	public static final int MAX_MONTH = 12;
 	public static final int MIN_DAY = 1;
 	public static final int MIN_YEAR = 1;
+	public static final int[] DAYS_PER_MONTH = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
 	private int day;
 	private int month;
@@ -19,10 +20,9 @@ public class Date {
 		setYear(year);
 	}
 
-	public void addDays(int x){ // x >= 0
+	public void addDays(int x) { // x >= 0
 
 	}
-
 
 	public void addMonths(int x) { // x >= 0
 		// dla x >= 0
