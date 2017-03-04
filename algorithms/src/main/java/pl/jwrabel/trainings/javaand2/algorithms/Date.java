@@ -35,6 +35,7 @@ public class Date {
 		}
 
 		// dla x dowolnego
+		month += x;
 		if (month > MIN_MONTH) {
 			year += month / MAX_MONTH;
 			month = month % MAX_MONTH;
@@ -43,6 +44,7 @@ public class Date {
 			month = MAX_MONTH - month % MAX_MONTH;
 		}
 		// LUB inne dla x dowolnego
+		month += x;
 		if (month > MIN_MONTH) {
 			while (month > MAX_MONTH) {
 				year++;
