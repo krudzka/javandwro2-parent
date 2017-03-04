@@ -20,7 +20,26 @@ public class Date {
 		setYear(year);
 	}
 
+	public void addDate(Date date) {
+		addYears(date.getYear());
+		addMonths(date.getMonth());
+		addDays(date.getDay());
+	}
+
 	public void addDays(int x) { // x >= 0
+		day += x;
+		while (day > DAYS_PER_MONTH[month - 1]) {
+			day -= DAYS_PER_MONTH[month - 1];
+			addMonths(1);
+		}
+
+		// LUB
+//		day += x;
+//		if (day > DAYS_PER_MONTH[month - 1]) {
+//			addMonths(1);
+//			day -= DAYS_PER_MONTH[month-2];
+//			addDays(0);
+//		}
 
 	}
 
@@ -28,34 +47,36 @@ public class Date {
 		// dla x >= 0
 		if (x > 0) {
 			month += x;
-			addYears(month / MAX_MONTH);
-			month = month % MAX_MONTH;
+			addYears((month - 1) / MAX_MONTH);
+			month = (month - 1) % MAX_MONTH + 1;
 		} else {
 			throw new IllegalArgumentException("Could not add negative month");
 		}
 
-		// dla x dowolnego
-		month += x;
-		if (month > MIN_MONTH) {
-			year += month / MAX_MONTH;
-			month = month % MAX_MONTH;
-		} else {
-			year -= month / MAX_MONTH + 1;
-			month = MAX_MONTH - month % MAX_MONTH;
-		}
-		// LUB inne dla x dowolnego
-		month += x;
-		if (month > MIN_MONTH) {
-			while (month > MAX_MONTH) {
-				year++;
-				month -= MAX_MONTH;
-			}
-		} else {
-			while (month < MIN_MONTH) {
-				year--;
-				month += MAX_MONTH;
-			}
-		}
+
+//		// dla x dowolnego
+//		month += x;
+//		if (month > MIN_MONTH) {
+//			year += month / MAX_MONTH;
+//			month = (month - 1) % MAX_MONTH + 1;
+//		} else {
+//			year -= month / MAX_MONTH + 1;
+//			month = MAX_MONTH - (month % MAX_MONTH) + 1; // ????????
+//		}
+
+//		// LUB inne dla x dowolnego
+//		month += x;
+//		if (month > MIN_MONTH) {
+//			while (month > MAX_MONTH) {
+//				year++;
+//				month -= MAX_MONTH;
+//			}
+//		} else {
+//			while (month < MIN_MONTH) {
+//				year--;
+//				month += MAX_MONTH;
+//			}
+//		}
 	}
 
 	public void addYears(int x) {
@@ -99,5 +120,17 @@ public class Date {
 		} else {
 			throw new IllegalArgumentException();
 		}
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Date date = (Date) o;
+
+		if (day != date.day) return false;
+		if (month != date.month) return false;
+		return year == date.year;
 	}
 }

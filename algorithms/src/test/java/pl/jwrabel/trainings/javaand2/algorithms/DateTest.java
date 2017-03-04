@@ -58,4 +58,88 @@ public class DateTest {
 		date.setMonth(month);
 	}
 
+
+	@Test
+	public void addMonths_simple() {
+		// given
+		int day = 1;
+		int month = 1;
+		int year = 1;
+		int monthsToAdd = 3;
+		Date date = new Date(day, month, year);
+
+		// when
+		date.addMonths(monthsToAdd);
+
+		// then
+		assertEquals(day, date.getDay());
+		assertEquals(4, date.getMonth());
+		assertEquals(year, date.getYear());
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void addMonths_shouldThrowExceptionForNegativeInput() {
+		// given
+		int day = 1;
+		int month = 1;
+		int year = 1;
+		Date date = new Date(day, month, year);
+
+		// when
+		date.addMonths(-1);
+	}
+
+	@Test
+	public void addMonths_shouldAddYear() {
+		// given
+		int day = 1;
+		int month = 1;
+		int year = 1;
+		int monthsToAdd = 12;
+		Date date = new Date(day, month, year);
+
+		// when
+		date.addMonths(monthsToAdd);
+
+		// then
+		assertEquals(day, date.getDay());
+		assertEquals(month, date.getMonth());
+		assertEquals(year + 1, date.getYear());
+	}
+
+	@Test
+	public void addMonths_shouldNotAddYear() {
+		// given
+		int day = 1;
+		int month = 1;
+		int year = 1;
+		int monthsToAdd = 11;
+		Date date = new Date(day, month, year);
+
+		// when
+		date.addMonths(monthsToAdd);
+
+		// then
+		assertEquals(day, date.getDay());
+		assertEquals(12, date.getMonth());
+		assertEquals(year, date.getYear());
+	}
+
+	@Test
+	public void addDays_simple() {
+		// given
+		int day = 1;
+		int month = 1;
+		int year = 1;
+		int daysToAdd = 59;
+		Date date = new Date(day, month, year);
+
+		// when
+		date.addDays(daysToAdd);
+
+		// then
+		assertEquals(date, new Date(1, 3, year));
+	}
+
+
 }
