@@ -1,0 +1,97 @@
+	// WAŻNE !!! Znajdują tu się zadania o różnych stopniu skomplikowania, jeśli dany problem jest dla Ciebie za trudny
+	//  --- pytaj mnie lub przejdź do następnego
+
+
+	// PROSTE ALGORYTMY
+	// === ZADANIE === Wypełnienie tablicy liczbami od 1 do N
+	// === ZADANIE === Wypełnienie tablicy liczbami od N do 1
+	// === ZADANIE === Wyszukiwanie najmniejszej wartości w tablicy
+	// === ZADANIE === Wyszukiwanie najmniejszej i największej wartości w tablicy przy użyciu jednej pętli
+	// === ZADANIE === Zamiana miejscami dwóch elementów tablicy
+	// === ZADANIE === Wykreślenie (zamiana na np. -1) w tablicy wartości nieparzystych
+	// === ZADANIE === Suma liczba w tablicy
+	// === ZADANIE === Przepisanie tablicy mniejszej do większej (np tablicę [1,2,3] chcemy przepisać
+	//      do nowej tablicy 6-elementowej, wynikeim będzie [1,2,3,0,0,0])
+	// === ZADANIE === Odwrócenie tablicy (1,2,3) -> (3,2,1)
+	// === ZADANIE === Choinka o zadanej wysokości
+	// === ZADANIE === "Narysuj" dużą literę A z liter A, np.
+	//    A
+	//   A A
+	//  A   A
+	// A A A A
+	//A       A
+	// === ZADANIE === Mnożenie macierzy
+
+
+	// === ZADANIE === Sprawdzenie, czy liczba jest liczbą pierwszą - rozwiązanie - klasa Primary
+	// === ZADANIE === Wyznaczenie liczb pierwszych mniejszych od N z użyciem powyższej metody - rozwiązanie - klasa Primary
+	// === ZADANIE === Wyznaczenie liczb pierwszych mniejszych od N - sito Erystotenesa - rozwiązanie - klasa Primary
+	// === ZADANIE === Rozkład liczby na czynniki pierwsze
+	// === ZADANIE === Wydawanie reszty - podobne do rozkładu na czynniki pierwsze, mamy nominały 1, 2, 5, 10, 20, 50 groszy,
+	//      mając do wydania np. 186 groszy reszty jakimi monetami to zrobić żeby było ich najmniej
+	//      czyli można sprawdzać od największych nominałów (50 groszy) czy liczba jest większa od danego nominału
+	//      i tak schodzić do mniejszych
+	// === ZADANIE === Rozszerzyć powyższe zadanie o banknoty (zapisywane groszowo!!!, np. 100zł = 10000 gr) - kwoty zapisywać jako inty w groszach
+	// === ZADANIE === Program wczytujący tekst z pliku, podmieniający wszystkie słowa X na słowa Y i zapisujący do wynikowego pliku
+	//      (Np. dla x = mama, y = ja podmieni wszystkie wystąpienia "mama" na "ja")
+
+
+	// === ZADANIE === napisać metodę do obliczania potęgi liczby,
+	//      parametry - double n, double k, wynik = n^k, k jest liczbą naturalną
+	// === ZADANIE === rozszerzyć powyższą metodę o uwględnianie potęg ujemnych - k może być ujemne
+
+	// === ZADANIE === napisać rekurencyjną metodę obliczającą sumę liczb od 1 do N - rozwiązanie - RecursionMain
+	// === ZADANIE === napisać rekurencyjną metodę obliczającą silnię liczby N! - rozwiązanie - RecursionMain
+	// === ZADANIE === napisać rekurencyjną metodę wyznaczającą N-ty element ciągu fibonacciego
+	// === ZADANIE === metoda obliczająca największy wspólny dzielnik
+	//      https://wikimedia.org/api/rest_v1/media/math/render/svg/992c1e408693a70235b67f389a33ab796aaef613
+
+	// ALGORYTMY SORTOWANIA
+	// === ZADANIE === Sortowanie bąbelkowe - Rozwiązane - klasa BubbleSort
+	// === ZADANIE === Sortowanie przez wybieranie - Rozwiązane - klasa SelectionSort
+	// === ZADANIE === Sortowanie przez wstawianie - Rozwiązane - klasa InsertionSort
+	// === ZADANIE === Sortowanie szybkie - Stworzony szablon - klasa QuickSort
+	// === ZADANIE === Utworzyć program wczytujący dane z plików, sortujący je i zapisujący do innego pliku
+
+	// === ZADANIE === Napisać metodę zamieniającą liczbę w zapisie dziesiętnych w postaci Stringa na jej binarną reprezentację
+	//      Wskazówka - da się to zrobić podobnie jak wyznaczanie czyników naturalnych tylko sprawdzamy,
+	//      czy jest podzielna przez kolejne potęgi liczby 2 tj. 1, 2, 4, 8, 16 etc.
+
+
+	// SZYFROWANIA
+	// === ZADANIE === Szyfrowanie cezara - rozwiązanie - klasy CaesarMain, CaesarEncrypting
+	// === ZADANIE === Szyfrowanie Vigenere'a - szablon - VigenereEncrypting
+	// === ZADANIE === Wyszukiwanie binarne
+	// === ZADANIE === Szyfrowanie ADFGVX
+	//      http://securelist.pl/threats/5906,ef_g73_5r_kilka_slow_o_szyfrowaniu_i_algorytmach.html
+	// === ZADANIE === napisać program okienkowy do szyfrowania - pole do wpisywania tekstu,
+	//      pole z tekstem zaszyfrowanym, wybór algorytmu, podanie parametrów (offset dla Cezara, klucz dla vigenere'a)
+
+
+	// LISTY
+	// === ZADANIE === Zamodelować listę i stworzyć metody do:
+	//      - Wyciągnięcie pierwszego elementu z listy
+	//      - Wyciągnięcie drugiego elementu z listy
+	//      - Wyciągnięcie ostatniego elementu
+	//      - Dodanie elementu
+	//      - Obliczenie rozmiaru listy
+	//      - Wypisanie wszystkich wartości
+	//      - Zwrócenie wszystkich wartości jako lista "Javova" tj. wbudowana
+	//      - Usuń pierwszy element
+	//      - Usuń ostatni element
+	//      - Usuń i-ty element
+	//      - Zwróć i-ty element
+	//      - Dodaj wartość pod indeks i
+
+
+	// DLA ZAAWANSOWANYCH
+	// === ZADANIE === napisać samemu!!! kółko i krzyżyk obiektowo
+	// === ZADANIE === Kółko i krzyżyk ale jako aplikacja okienkowa (pola mogą być po prostu przyciskami)
+
+	// === ZADANIE === zamodelować graf, stworzyć aplikację okienkową do rysowania grafu, z dodawaniem krawędzi i wierzchołków,
+	//      zaimplementować algorytm Dijkstry - wyszukiwanie najkrótszej trasy i narysowanie jej
+	// === ZADANIE === Rozwiązać problem N-Hetmanów
+
+
+	// DLA BARDZO ZAAWANSOWANYCH
+	// === ZADANIE === poczytać o algorytmie genetycznym/ewolucyjnym, z jego pomocą stworzyć program rozwiązujący sudoku lub wyszukujący najkrótszą ścieżkę w grafie
