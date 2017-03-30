@@ -105,7 +105,7 @@ public class FileStreams {
 		bufferedInputStream.close();
 		inputStreamToBuffer.close();
 
-		// BufferedOutputStream
+		// BufferedOutputStream jest lepszy od file od file po kolei wchodzi do kazzdego plikunp po kazdego chara a buffer sb bierze jakis bufor, np calego stringa i na nim operuje
 		FileOutputStream fosToBuffer = new FileOutputStream("test.txt");
 		BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fosToBuffer);
 

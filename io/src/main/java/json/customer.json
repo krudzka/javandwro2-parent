@@ -1,0 +1,27 @@
+//    {} - >obiekt
+//    "abc":"xyz" -> pole o nazwie abc i wartosci xyz
+//    [] -> kolekcja
+//  mapa a->b
+//       c->d
+
+
+
+{
+"firstName":["Adam","Piotr"],
+"lastName":"Kowalski",
+"abc":"xyz"
+"id":123,
+"childs":[
+{
+        "firstName": [
+        "Adam",
+        "Piotr"
+],
+        "lastName":"Kowalski"
+}
+]
+//{
+//  "a": "b",
+//  "c": "d"
+//}
+}
